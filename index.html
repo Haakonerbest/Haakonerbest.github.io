@@ -1,12 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hei</title>
-</head>
-<body>
-    <h1>hei</h1>
+<html lang="NO">
+
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Haakon sin jule nettside</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+       
+	</head>
+
+	<body>
+        <div class="row">
+                
+		<div id="gråbakgrunn">
+        <h1 id="melding">Haakon sin jule nettside!</h1>
+		 <p>God jul!</p>
+         <img src="merry.jpg" width=400  alt="" id="julehund">
+		 </div>
+        <ul>
+           
+<br>
+
+			<div class="ramme">
+				<h2>
+                 En liten jule quiz!
+				</h2>
+                <p>Når er julaften? </p>
+                <p id="svar1">Klikk for å se om du fikk riktig!</p> 
+                <br>
+                <p>Er ribbe julemat?</p>
+                <p id="svar2">Klikk for å se om du fikk riktig!</p>
+
+
+
+                
+			
+            <img src="julehund.jpg" width=400  alt="" id="julehund">
+        </div>
+        <h1>Rundetider!</h1>
+    <p id="leggtil">legg til ny tid</p>
+    <ol id="tider">
+</ol>
 </body>
+
+<style>
+    .groenn {color:green}
+    .blaa {color:blue}
+    .roed {color:crimson}
+
+    
+
+
+    body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       text-align: center;
+        background-position: center;
+        background-color: red;
+  background-image: url(snowing.gif) ;
+
+}
+</style>
+
+<script>
+    window.onload = oppstart;
+    
+
+    function oppstart() {
+        document.getElementById("svar1").onclick = visSvar1;
+        document.getElementById("svar2").onclick = visSvar2;
+        document.getElementById("leggtil") .onmousedown =leggtil;
+    }
+    function visSvar1() {
+        document.getElementById("svar1") .innerHTML = "24 desember";
+    }
+    function visSvar2(){
+        document.getElementById("svar2") .innerHTML = "Ja!"
+    }
+     function leggtil () {
+    var tid = new Date () ;
+    var nyttElement = document.createElement("li") ;
+
+    nyttElement.innerHTML = tid.getHours() + " : " + tid.getMinutes() + " : " + tid.getSeconds() ;
+
+    document.getElementById("tider") .appendChild(nyttElement) ;
+}
+
+
+
+
+    
+     
+</script>
+
+<footer>
+<input type="radio" name="kjonn" id="rbtnkjonnmann" value="mann" />Mann<br />
+<input type="radio" name="kjonn" id="rbtnkjonnkvinne" value="kvinne" />Kvinne<br />
+
+    <input type="text" id="txtNavn" placeholder="Navn" /> <br />
+<input type="text" id="txtTelefon" placeholder="hva spiser du på julaften?" /> <br />
+ <button type="button" id="btnVelkomst">OK</button>
+
+
+</footer>
+
 </html>
